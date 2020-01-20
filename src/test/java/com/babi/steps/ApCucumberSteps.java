@@ -11,7 +11,7 @@ import com.babi.converters.DateConverter;
 
 import cucumber.api.Transform;
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
+import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 
@@ -24,17 +24,17 @@ public class ApCucumberSteps {
 	}
 
 	@Quando("^executá-lo$")
-	public void executá_lo() throws Throwable {
+	public void execut�lo() throws Throwable {
 
 	}
 
-	@Então("^a especificação deve finalizar com sucesso$")
-	public void aEspecificaçãoDeveFinalizarComSucesso() throws Throwable {
+	@Entao("^a especificação deve finalizar com sucesso$")
+	public void aEspecifica�oDeveFinalizarComSucesso() throws Throwable {
 	}
 	
 	private int contador = 0;
 	@Dado("^que o valor do contator é (\\d+)$")
-	public void queOValorDoContatorÉ(int arg1) throws Throwable {
+	public void queOValorDoContator�(int arg1) throws Throwable {
           contador = arg1;	
 	}
 
@@ -43,8 +43,8 @@ public class ApCucumberSteps {
          contador = contador + arg1;
 	}
 
-	@Então("^o valor do contador será (\\d+)$")
-	public void oValorDoContadorSerá(int arg1) throws Throwable {
+	@Entao("^o valor do contador será (\\d+)$")
+	public void oValorDoContadorSer�(int arg1) throws Throwable {
 		System.out.println(arg1);
 		System.out.println(contador);
        //Assert.assertTrue(arg1 == contador);
@@ -55,7 +55,7 @@ public class ApCucumberSteps {
 	Date entrega = new Date();
 	
 	@Dado("^que a entrega é no dia (.*)$")
-	public void queOPrazoDeEntregaÉDia(@Transform(DateConverter.class)Date data) throws Throwable {
+	public void queOPrazoDeEntrega�Dia(@Transform(DateConverter.class)Date data) throws Throwable {
         entrega = data;
        
 	}
@@ -74,8 +74,8 @@ public class ApCucumberSteps {
         entrega = cal.getTime();
 	}
 
-	@Então("^a entrega será efetuada dia (\\d{2}\\/\\d{2}\\/\\d{4})$")
-	public void aEntregaSeráEfetuadaEm(String data) throws Throwable {
+	@Entao("^a entrega será efetuada dia (\\d{2}\\/\\d{2}\\/\\d{4})$")
+	public void aEntregaSer�EfetuadaEm(String data) throws Throwable {
         DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
         String dataFormatada = format.format(entrega);
         Assert.assertEquals(data, dataFormatada);
@@ -83,22 +83,22 @@ public class ApCucumberSteps {
 	
 	
 	@Dado("^que o ticket( especial)? é A.(\\d{3})$")
-	public void queOTicketÉAF(String tipo, String arg1) throws Throwable {
+	public void queOTicket�AF(String tipo, String arg1) throws Throwable {
 
 	}
 
 	@Dado("^que o valor da passagem é R\\$ (.*)$")
-	public void queOValorDaPassagemÉR$(Double numero) throws Throwable {
+	public void queOValorDaPassagem�R$(Double numero) throws Throwable {
 
 	}
 
 	@Dado("^que o nome do passageiro é \"(.{5,20})\"$")
-	public void queONomeDoPassageiroÉ(String arg1) throws Throwable {
+	public void queONomeDoPassageiro�(String arg1) throws Throwable {
 
 	}
 
 	@Dado("^que o telefone do passageiro é (9\\d{3} - \\d{4})$")
-	public void queOTelefoneDoPassageiroÉ(String telefone) throws Throwable {
+	public void queOTelefoneDoPassageiro�(String telefone) throws Throwable {
 
 	}
 
@@ -107,7 +107,7 @@ public class ApCucumberSteps {
 
 	}
 
-	@Então("^o teste vai funcionar$")
+	@Entao("^o teste vai funcionar$")
 	public void oTesteVaiFuncionar() throws Throwable {
 
 	}	

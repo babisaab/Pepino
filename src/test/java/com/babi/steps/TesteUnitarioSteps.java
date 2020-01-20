@@ -15,7 +15,7 @@ import com.babi.utils.DateUtil;
 
 import cucumber.api.DataTable;
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Então;
+import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class TesteUnitarioSteps {
@@ -34,7 +34,7 @@ public class TesteUnitarioSteps {
 	}
 
 	@Dado("^que o preço do aluguel seja R\\$ (\\d+)$")
-	public void queOPreçoDoAluguelSejaR$(int arg1) throws Throwable {
+	public void queOPre�oDoAluguelSejaR$(int arg1) throws Throwable {
          filme.setAluguel(arg1);
 	}
     
@@ -61,20 +61,20 @@ public class TesteUnitarioSteps {
         }
 	}
 
-	@Então("^o preço do aluguel será R\\$ (\\d+)$")
-	public void oPreçoDoAluguelSeráR$(int arg1) throws Throwable {
+	@Entao("^o preço do aluguel será R\\$ (\\d+)$")
+	public void oPre�oDoAluguelSer�R$(int arg1) throws Throwable {
              Assert.assertEquals(arg1, nota.getPreco());
 	}
 
 
 
-	@Então("^o estoque do filme será (\\d+) unidade$")
-	public void oEstoqueDoFilmeSeráUnidade(int arg1) throws Throwable {
+	@Entao("^o estoque do filme será (\\d+) unidade$")
+	public void oEstoqueDoFilmeSer�Unidade(int arg1) throws Throwable {
           Assert.assertEquals(arg1, filme.getEstoque());
 	}
 
-	@Então("^não será possível por falta de estoque$")
-	public void nãoSeráPossívelPorFaltaDeEstoque() throws Throwable {
+	@Entao("^não será possível por falta de estoque$")
+	public void nãoSer�PossívelPorFaltaDeEstoque() throws Throwable {
            Assert.assertEquals("filme sem estoque", erro);
 	}
 
@@ -82,8 +82,8 @@ public class TesteUnitarioSteps {
 	public void queOTipoDeAluguelSejaExtendido(String tipo) throws Throwable {
            tipoAluguel = tipo.equals("semanal")? TipoAluguel.SEMANAL: tipo.equals("extendido")? TipoAluguel.EXTENDIDO: TipoAluguel.COMUM;
 	}
-	@Então("^a data de entrega será em (\\d+) dias?$")
-	public void aDataDeEntregaSeráEmDias(int arg1) throws Throwable {
+	@Entao("^a data de entrega será em (\\d+) dias?$")
+	public void aDataDeEntregaSer�EmDias(int arg1) throws Throwable {
                Date dataEsperada  = DateUtil.obterDataDiferencaDias(arg1);
                Date dataReal = nota.getDataEntrega();
                
@@ -92,8 +92,8 @@ public class TesteUnitarioSteps {
                Assert.assertEquals(format.format(dataEsperada), format.format(dataReal));
 	}
 
-	@Então("^a pontuação recebida será de (\\d+) pontos$")
-	public void aPontuaçãoRecebidaSeráDePontos(int arg1) throws Throwable {
+	@Entao("^a pontuação recebida será de (\\d+) pontos$")
+	public void aPontua�ãoRecebidaSer�DePontos(int arg1) throws Throwable {
             Assert.assertEquals(arg1,  nota.getPontuacao());
 	}
 
