@@ -2,35 +2,35 @@
 
 @unitarios
 Funcionalidade: Alugar um filme
- Como um usu√°rio
- Eu quero cadastrar alugu√©is de filmes
- Para controlar pre√ßos e datas de entrega
+ Como um usu·rio
+ Eu quero cadastrar aluguel de filmes
+ Para controlar preÁos e datas de entrega
  
- Cen√°rio: Deve alugar um filme com sucesso
+ Cen·rio: Deve alugar um filme com sucesso
  
  Dado um filme
  | estoque |    2  |
- | pre√ßo   |    3  |
+ | preÁo   |    3  |
  | tipo    | comum |
  Quando alugar 
- Ent√£o o pre√ßo do aluguel ser√° R$ 3
- E a data de entrega ser√° em 1 dia
- E o estoque do filme ser√° 1 unidade
+ Ent„o o preÁo do aluguel ser· R$ 3
+ E a data de entrega ser· em 1 dia
+ E o estoque do filme ser· 1 unidade
  
- Cen√°rio: N√£o deve alugar filme sem estoque
+ Cen·rio: N„o deve alugar filme sem estoque
  
  Dado um filme com estoque de 0 unidades
  Quando alugar
- Ent√£o n√£o ser√° poss√≠vel por falta de estoque
+ Ent„o n„o ser· possÌvel por falta de estoque
  
- Esquema do Cen√°rio: deve dar condi√ß√µes conforme tipo de aluguel
+ Esquema do Cen·rio: deve dar condiÁıes conforme tipo de aluguel
  Dado um filme com estoque de 2 unidades
- E que o pre√ßo do aluguel seja R$ <preco>
+ E que o preÁo do aluguel seja R$ <preco>
  E que o tipo de aluguel seja <tipo>
  Quando alugar
- Ent√£o o pre√ßo do aluguel ser√° R$ <valor>
- E a data de entrega ser√° em <qtdDias> dias
- E a pontua√ß√£o recebida ser√° de <pontuacao> pontos
+ Ent„o o preÁo do aluguel ser· R$ <valor>
+ E a data de entrega ser· em <qtdDias> dias
+ E a pontuaÁ„o recebida ser· de <pontuacao> pontos
  
  
  Exemplos:
